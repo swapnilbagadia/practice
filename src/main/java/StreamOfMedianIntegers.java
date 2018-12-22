@@ -62,6 +62,7 @@ public class StreamOfMedianIntegers {
 
     private static void reBalance(PriorityQueue<Integer> lowers, PriorityQueue<Integer> highers) {
 
+        //Rebalance if size diff is more than equal to two
         if (lowers.size() == highers.size()) {
             return;
         } else if (Math.abs(lowers.size() - highers.size()) >= 2) {
@@ -75,9 +76,12 @@ public class StreamOfMedianIntegers {
 
     private static double getMedian(PriorityQueue<Integer> lowers, PriorityQueue<Integer> highers) {
 
+        //if same size, average of priority elements of both heap
         if (lowers.size() == highers.size()) {
             return ((double) lowers.peek() + highers.peek()) / 2;
         } else {
+
+            //if different size, priority elemet of bigger heap
             PriorityQueue<Integer> biggerHeap = lowers.size() > highers.size() ? lowers : highers;
             PriorityQueue<Integer> smallerHeap = lowers.size() < highers.size() ? lowers : highers;
             return biggerHeap.peek();
