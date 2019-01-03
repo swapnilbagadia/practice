@@ -16,7 +16,6 @@ public class StreamOfMedianIntegers {
             System.out.println(medians[i]);
         }
 
-
     }
 
 
@@ -81,7 +80,7 @@ public class StreamOfMedianIntegers {
             return ((double) lowers.peek() + highers.peek()) / 2;
         } else {
 
-            //if different size, priority elemet of bigger heap
+            //if different size, priority element of bigger heap
             PriorityQueue<Integer> biggerHeap = lowers.size() > highers.size() ? lowers : highers;
             PriorityQueue<Integer> smallerHeap = lowers.size() < highers.size() ? lowers : highers;
             return biggerHeap.peek();

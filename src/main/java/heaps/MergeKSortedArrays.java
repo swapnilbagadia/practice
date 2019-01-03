@@ -13,23 +13,18 @@ public class MergeKSortedArrays {
         list1.add(1);
         list1.add(20);
         list1.add(30);
-
         ArrayList<Integer> list2 = new ArrayList<>();
         list2.add(4);
         list2.add(7);
         list2.add(9);
-
         ArrayList<Integer> list3 = new ArrayList<>();
         list3.add(2);
         list3.add(6);
         list3.add(8);
-
         myList.add(list1);
         myList.add(list2);
         myList.add(list3);
-
         List<Integer> result = mergeKSortedArrays(myList);
-
         System.out.println(result);
 
     }
@@ -64,15 +59,9 @@ public class MergeKSortedArrays {
                 minHeap.add(new MinHeapKey(array.get(elementIndex + 1), arrayNumber, elementIndex + 1));
             }
             result.add(key.data);
-
-
         }
-
-
         return result;
-
     }
-
 
     static class MinHeapKey {
         int data;
@@ -84,7 +73,5 @@ public class MergeKSortedArrays {
             this.arrayNumber = arrayNumber;
             this.elementIndex = elementIndex;
         }
-
-
     }
 }
